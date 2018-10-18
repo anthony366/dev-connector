@@ -8,8 +8,6 @@ const validateProfileInput = require("../../validation/profile");
 const validateExperienceInput = require("../../validation/experience");
 const validateEducationInput = require("../../validation/education");
 
-router.get("/test", (req, res) => res.json({ message: "Profile works" }));
-
 //GET profile - authenticated
 router.get(
   "/",

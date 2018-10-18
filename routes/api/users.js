@@ -9,9 +9,7 @@ const User = require("../../models/User");
 const validateRegisterInput = require("../../validation/resgister");
 const validateLoginInput = require("../../validation/login");
 
-router.get("/test", (req, res) => res.json({ message: "Users works" }));
-
-//register user
+//POST register user - public
 router.post("/register", (req, res) => {
   //error validation
   const { errors, isValid } = validateRegisterInput(req.body);
@@ -52,7 +50,7 @@ router.post("/register", (req, res) => {
   });
 });
 
-//login user with jwt token
+//POST login user with jwt token
 router.post("/login", (req, res) => {
   //error validation
   const { errors, isValid } = validateLoginInput(req.body);
@@ -95,7 +93,7 @@ router.post("/login", (req, res) => {
   });
 });
 
-//create protected routes using Passport.js
+//GET create protected routes using Passport.js
 router.get(
   "/current",
   passport.authenticate("jwt", { session: false }),

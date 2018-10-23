@@ -1,10 +1,25 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { getProfile } from "../../actions/profileActions";
 
 class Dashboard extends Component {
-  state = {};
+  componentDidMount() {
+    this.props.getProfile();
+  }
+
   render() {
     return <h1>Dashboard works!!</h1>;
   }
 }
 
-export default Dashboard;
+Dashboard.propTypes = {};
+
+// const mapStateToProps = (state) => ({
+
+// })
+
+export default connect(
+  null,
+  { getProfile }
+)(Dashboard);

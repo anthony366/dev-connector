@@ -14,6 +14,19 @@ class Register extends Component {
     errors: {}
   };
 
+  componentDidMount() {
+    //if logged in, user won't be able to change url in browser
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/dashboard");
+    }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
+    }
+  }
+
   handleInputChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
@@ -29,12 +42,6 @@ class Register extends Component {
 
     this.props.registerUser(newUser, this.props.history);
   };
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.errors) {
-      this.setState({ errors: nextProps.errors });
-    }
-  }
 
   render() {
     //get input validation errors from state

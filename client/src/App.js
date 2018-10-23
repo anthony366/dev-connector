@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import Home from "./components/pages/Home";
 import Login from "./components/forms/Login";
 import Register from "./components/forms/Register";
+import Dashboard from "./components/pages/Dashboard";
 import Footer from "./components/Footer";
 import "./App.css";
 import store from "./store";
@@ -30,6 +31,7 @@ class App extends Component {
         <div className="container">
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
+          <Route path="/dashboard" component={Dashboard} />
         </div>
         <Footer />
       </div>

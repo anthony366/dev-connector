@@ -11,6 +11,13 @@ class Login extends Component {
     errors: {}
   };
 
+  componentDidMount() {
+    //if logged in, user won't be able to change url in browser
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/dashboard");
+    }
+  }
+
   componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
       this.props.history.push("/dashboard");

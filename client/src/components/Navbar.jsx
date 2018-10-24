@@ -20,16 +20,18 @@ class Navbar extends Component {
     const authLinks = (
       <ul className="navbar-nav ml-auto">
         <li className="nav-item">
-          <span className="user-name">Hi {user.name}</span>
-        </li>
-        <li className="nav-item">
-          <a href="true" onClick={this.handleLogout} className="nav-link">
+          <span className="user-name">
             <img
               className="rounded-circle"
               src={user.avatar}
               alt={user.name}
               style={{ width: "25px", marginRight: "5px" }}
             />
+            Hi {user.name}
+          </span>
+        </li>
+        <li className="nav-item">
+          <a href="true" onClick={this.handleLogout} className="nav-link">
             Logout
           </a>
         </li>

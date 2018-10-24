@@ -24,8 +24,8 @@ export const loginUser = userData => dispatch => {
     .post("/api/users/login", userData)
     .then(res => {
       const { token } = res.data;
-      localStorage.setItem("jwt-token", token);
-      setAuthToken(token);
+      localStorage.setItem("jwtToken", token);
+      setAuthToken(token); // set token to Auth header
       const decodeToken = jwt_decode(token); // decode token to get user data
       dispatch(setCurrentUser(decodeToken));
     })
@@ -46,9 +46,9 @@ export const setCurrentUser = decodeToken => {
 };
 
 //Log out user
-export const logoutUser = history => dispatch => {
+export const logoutUser = () => dispatch => {
   localStorage.removeItem("jwtToken");
   setAuthToken(false);
   dispatch(setCurrentUser({}));
-  history.push("/");
+  // history.push("/");
 };

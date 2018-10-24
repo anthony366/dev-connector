@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
@@ -12,6 +12,7 @@ import Dashboard from "./components/pages/Dashboard";
 import Footer from "./components/Footer";
 import "./App.css";
 import store from "./store";
+import PrivateRoute from "./components/common/PrivateRoute";
 
 // Check for token
 if (localStorage.jwtToken) {
@@ -43,7 +44,11 @@ class App extends Component {
         <div className="container">
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
-          <Route path="/dashboard" component={Dashboard} />
+
+          {/* use Switch for private routes */}
+          <Switch>
+            <PrivateRoute exact path="/dashboard" component={Dashboard} />
+          </Switch>
         </div>
         <Footer />
       </div>

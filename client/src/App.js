@@ -9,6 +9,7 @@ import Home from "./components/pages/Home";
 import Login from "./components/forms/Login";
 import Register from "./components/forms/Register";
 import Dashboard from "./components/pages/Dashboard";
+import CreateProfile from "./components/pages/CreateProfile";
 import Footer from "./components/Footer";
 import "./App.css";
 import store from "./store";
@@ -48,6 +49,7 @@ class App extends Component {
           {/* use Switch for private routes */}
           <Switch>
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <PrivateRoute path="/create-profile" component={CreateProfile} />
           </Switch>
         </div>
         <Footer />

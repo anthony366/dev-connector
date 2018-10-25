@@ -58,7 +58,7 @@ class Navbar extends Component {
       <nav className="navbar navbar-expand-sm navbar-dark bg-dark mb-4">
         <div className="container">
           <Link to="/" className="navbar-brand" href="landing.html">
-            inDev
+            HeyDev!
           </Link>
           <button
             className="navbar-toggler"

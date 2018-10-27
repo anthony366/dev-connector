@@ -4,16 +4,19 @@ import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { clearProfile } from "./actions/profileActions";
+import store from "./store";
+import PrivateRoute from "./components/common/PrivateRoute";
 import Navbar from "./components/Navbar";
 import Home from "./components/pages/Home";
 import Login from "./components/forms/Login";
 import Register from "./components/forms/Register";
 import Dashboard from "./components/pages/Dashboard";
 import CreateProfile from "./components/pages/CreateProfile";
+import EditProfile from "./components/pages/EditProfile";
 import Footer from "./components/Footer";
 import "./App.css";
-import store from "./store";
-import PrivateRoute from "./components/common/PrivateRoute";
+import AddExperience from "./components/forms/AddExperience";
+import AddEducation from "./components/forms/AddEducation";
 
 // Check for token
 if (localStorage.jwtToken) {
@@ -50,6 +53,9 @@ class App extends Component {
           <Switch>
             <PrivateRoute exact path="/dashboard" component={Dashboard} />
             <PrivateRoute path="/create-profile" component={CreateProfile} />
+            <PrivateRoute path="/edit-profile" component={EditProfile} />
+            <PrivateRoute path="/add-experience" component={AddExperience} />
+            <PrivateRoute path="/add-education" component={AddEducation} />
           </Switch>
         </div>
         <Footer />

@@ -17,6 +17,7 @@ import Footer from "./components/Footer";
 import "./App.css";
 import AddExperience from "./components/forms/AddExperience";
 import AddEducation from "./components/forms/AddEducation";
+import Profiles from "./components/profiles/Profiles";
 
 // Check for token
 if (localStorage.jwtToken) {
@@ -48,6 +49,7 @@ class App extends Component {
         <div className="container">
           <Route path="/login" component={Login} />
           <Route path="/register" component={Register} />
+          <Route exact path="/profiles" component={Profiles} />
 
           {/* use Switch for private routes */}
           <Switch>

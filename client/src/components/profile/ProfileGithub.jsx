@@ -1,13 +1,12 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 class ProfileGithub extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      clientId: "26c196bacea7db10cf48",
-      clientSecret: "0885cb690e07d2a93a6afb0891fb552fd9f7aa53",
+      clientId: "44d130d8bef2b56b5e87",
+      clientSecret: "5715e5918fc58715a0177901b6539eefda841c0b",
       count: 5,
       sort: "created: asc",
       repos: []
@@ -38,14 +37,14 @@ class ProfileGithub extends Component {
         <div className="row">
           <div className="col-md-6">
             <h4>
-              <Link
-                to={repo.html_url}
+              <a
+                href={repo.html_url}
                 className="text-info"
                 target="_blank"
                 rel="noreferrer noopener"
               >
                 {repo.name}
-              </Link>
+              </a>
             </h4>
             <p>{repo.description}</p>
           </div>

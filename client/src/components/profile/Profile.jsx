@@ -11,18 +11,27 @@ import { getProfileByHandle } from "../../actions/profileActions";
 
 class Profile extends Component {
   componentDidMount() {
-    //check if handle name matches handle name in url
-    if (this.props.match.params.handle) {
-      this.props.getProfileByHandle(this.props.match.params.handle);
-    }
+    const { handle } = this.props.match.params;
+    handle && this.props.getProfileByHandle(handle);
   }
 
-  //WARNING! To be deprecated in React v17. Use new lifecycle static getDerivedStateFromProps instead.
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.profile.profile === null && this.props.profile.loading) {
+  componentDidUpdate() {
+    this.props.profile.profile === null &&
+      !this.props.profile.loading &&
       this.props.history.push("/not-found");
-    }
   }
+  // componentDidMount() {
+  //   check if handle name matches handle name in url
+  //   if (this.props.match.params.handle) {
+  //     this.props.getProfileByHandle(this.props.match.params.handle);
+  //   }
+  // }
+
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.profile.profile === null && this.props.profile.loading) {
+  //     this.props.history.push("/not-found");
+  //   }
+  // }
 
   render() {
     const { profile, loading } = this.props.profile;

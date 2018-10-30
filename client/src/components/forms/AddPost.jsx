@@ -39,12 +39,12 @@ class AddPost extends Component {
     return (
       <div className="post-form mb-3">
         <div className="card card-info">
-          <div className="card-header bg-info text-white">Create a Post</div>
+          <div className="card-header bg-info text-white">Post Feeds</div>
           <div className="card-body">
             <form onSubmit={this.handleSubmit}>
               <div className="form-group">
                 <TextAreaFieldGroup
-                  placeholder="Type in Post comment"
+                  placeholder="Type in a post"
                   name="text"
                   value={this.state.text}
                   onChange={this.handleInputChange}
@@ -52,7 +52,7 @@ class AddPost extends Component {
                 />
               </div>
               <button type="submit" className="btn btn-dark">
-                Submit
+                Add post
               </button>
             </form>
           </div>

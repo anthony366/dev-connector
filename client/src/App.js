@@ -20,6 +20,7 @@ import AddEducation from "./components/forms/AddEducation";
 import Profiles from "./components/profiles/Profiles";
 import Profile from "./components/profile/Profile";
 import Posts from "./components/pages/Posts";
+import Post from "./components/pages/Post";
 import PageNotFound from "./components/pages/PageNotFound";
 
 // Check for token
@@ -63,6 +64,7 @@ class App extends Component {
             <PrivateRoute path="/add-experience" component={AddExperience} />
             <PrivateRoute path="/add-education" component={AddEducation} />
             <PrivateRoute path="/feed" component={Posts} />
+            <PrivateRoute exact path="/post/:id" component={Post} />
           </Switch>
           <Route exact path="/not-found" component={PageNotFound} />
         </div>

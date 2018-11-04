@@ -18,6 +18,7 @@ class Login extends Component {
     }
   }
 
+  // error checking, if no errors redirect to dashbord page
   componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
       this.props.history.push("/dashboard");
@@ -44,30 +45,33 @@ class Login extends Component {
     const { errors } = this.state;
 
     return (
-      <div className="login">
+      <div>
         <div className="container">
           <div className="row">
-            <div className="col-md-8 m-auto">
-              <h1 className="display-4 text-center">Log In</h1>
-              <p className="lead text-center">Sign in to your account</p>
+            <div className="col-md-8 m-auto login">
+              <h1 className="display-4 text-center">Log into your account</h1>
               <form onSubmit={this.handleSubmit} noValidate>
+                <label htmlFor="email">Email Address</label>
                 <TextFieldGroup
-                  placeholder="Email Address"
                   type="email"
                   name="email"
                   value={this.state.email}
                   onChange={this.handleInputChange}
                   error={errors.email}
                 />
+                <label htmlFor="email">Password</label>
                 <TextFieldGroup
-                  placeholder="Password"
                   type="password"
                   name="password"
                   value={this.state.password}
                   onChange={this.handleInputChange}
                   error={errors.password}
                 />
-                <input type="submit" className="btn btn-info btn-block mt-4" />
+                <input
+                  type="submit"
+                  value="Login"
+                  className="btn btn-info btn-block mt-4"
+                />
               </form>
             </div>
           </div>

@@ -7,7 +7,8 @@ import TextFieldGroup from "../common/TextFieldGroup";
 
 class Register extends Component {
   state = {
-    name: "",
+    firstname: "",
+    lastname: "",
     email: "",
     password: "",
     password2: "",
@@ -34,7 +35,8 @@ class Register extends Component {
   handleSubmit = e => {
     e.preventDefault();
     const newUser = {
-      name: this.state.name,
+      firstname: this.state.firstname,
+      lastname: this.state.lastname,
       email: this.state.email,
       password: this.state.password,
       password2: this.state.password2
@@ -48,22 +50,33 @@ class Register extends Component {
     const { errors } = this.state;
 
     return (
-      <div className="register">
+      <div>
         <div className="container">
           <div className="row">
-            <div className="col-md-8 m-auto">
+            <div className="col-md-8 m-auto register">
               <h1 className="display-4 text-center">Sign Up</h1>
               <p className="lead text-center">Create your account</p>
+              <p className="small">
+                <span className="text-danger">*</span>
+                <strong>All fields are required</strong>
+              </p>
               <form onSubmit={this.handleSubmit} noValidate>
+                <label htmlFor="firstname">First Name</label>
                 <TextFieldGroup
-                  placeholder="Name"
-                  name="name"
-                  value={this.state.name}
+                  name="firstname"
+                  value={this.state.firstname}
                   onChange={this.handleInputChange}
-                  error={errors.name}
+                  error={errors.firstname}
                 />
+                <label htmlFor="lastname">Last Name</label>
                 <TextFieldGroup
-                  placeholder="Email Address"
+                  name="lastname"
+                  value={this.state.lastname}
+                  onChange={this.handleInputChange}
+                  error={errors.lastname}
+                />
+                <label htmlFor="email">Email Address</label>
+                <TextFieldGroup
                   type="email"
                   name="email"
                   value={this.state.email}
@@ -72,23 +85,27 @@ class Register extends Component {
                   info="This site uses Gravatar so if you want a profile image, use
                   a Gravatar email"
                 />
+                <label htmlFor="password">Password</label>
                 <TextFieldGroup
-                  placeholder="Password"
                   type="password"
                   name="password"
                   value={this.state.password}
                   onChange={this.handleInputChange}
                   error={errors.password}
                 />
+                <label htmlFor="password2">Confirm Password</label>
                 <TextFieldGroup
-                  placeholder="Confirm Password"
                   type="password"
                   name="password2"
                   value={this.state.password2}
                   onChange={this.handleInputChange}
                   error={errors.password2}
                 />
-                <input type="submit" className="btn btn-info btn-block mt-4" />
+                <input
+                  type="submit"
+                  value="Sign Up"
+                  className="btn btn-info btn-block mt-4"
+                />
               </form>
             </div>
           </div>

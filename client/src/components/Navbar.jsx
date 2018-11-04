@@ -18,7 +18,7 @@ class Navbar extends Component {
 
     //displayed navbar items when authenticated
     const authLinks = (
-      <ul className="navbar-nav ml-auto">
+      <ul className="navbar-nav ml-auto auth-menu">
         <li className="nav-item">
           <Link to="/feed" className="nav-link">
             Post Feed
@@ -29,22 +29,33 @@ class Navbar extends Component {
             Dashboard
           </Link>
         </li>
-        <li className="nav-item">
+        <li className="nav-item profile">
           <span className="user-name">
             <img
               className="rounded-circle"
               src={user.avatar}
-              alt={user.name}
+              alt={user.firstname}
               style={{ width: "25px", marginRight: "5px" }}
             />
-            Hi {user.name}
+            {user.firstname}
           </span>
+          <ul className="profile-menu">
+            <li className="profile-item">
+              <a
+                href="true"
+                onClick={this.handleLogout}
+                className="dropdown-link"
+              >
+                Logout
+              </a>
+            </li>
+          </ul>
         </li>
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <a href="true" onClick={this.handleLogout} className="nav-link">
             Logout
           </a>
-        </li>
+        </li> */}
       </ul>
     );
 

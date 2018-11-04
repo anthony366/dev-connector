@@ -30,7 +30,8 @@ class Dashboard extends Component {
         dashboardContent = (
           <div>
             <p className="lead text-muted">
-              Welcome <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
+              Welcome{" "}
+              <Link to={`/profile/${profile.handle}`}>{user.firstname}</Link>
             </p>
             <ProfileDetails />
             <ExperienceDetails experience={profile.experience} />
@@ -45,8 +46,8 @@ class Dashboard extends Component {
       } else {
         dashboardContent = (
           <div>
-            <p className="lead text-muted">Welcome {user.name}</p>
-            <p>Please add a profie</p>
+            <p className="lead text-muted">Welcome {user.firstname}</p>
+            <p>Please add your profie</p>
             <Link to="/create-profile" className="btn btn-lg btn-info">
               Create Profile
             </Link>

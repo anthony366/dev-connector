@@ -28,7 +28,8 @@ router.post("/register", (req, res) => {
         d: "mm" //default image if no image is provided
       });
       const newUser = new User({
-        name: req.body.name,
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
         email: req.body.email.toLowerCase(),
         password: req.body.password.toLowerCase(),
         avatar,
@@ -71,7 +72,7 @@ router.post("/login", (req, res) => {
       if (isMatch) {
         const payload = {
           id: user.id,
-          name: user.name,
+          firstname: user.firstname,
           avatar: user.avatar
         };
         jwt.sign(

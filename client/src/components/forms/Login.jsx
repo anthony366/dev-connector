@@ -48,8 +48,8 @@ class Login extends Component {
       <div>
         <div className="container">
           <div className="row">
-            <div className="col-md-8 m-auto login">
-              <h1 className="display-4 text-center">Log into your account</h1>
+            <div className="col-md-5 m-auto login">
+              <h1 className="display-4 text-center">Log in</h1>
               <form onSubmit={this.handleSubmit} noValidate>
                 <label htmlFor="email">Email Address</label>
                 <TextFieldGroup

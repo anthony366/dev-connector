@@ -53,12 +53,12 @@ class Register extends Component {
       <div>
         <div className="container">
           <div className="row">
-            <div className="col-md-8 m-auto register">
+            <div className="col-md-5 m-auto register">
               <h1 className="display-4 text-center">Sign Up</h1>
-              <p className="lead text-center">Create your account</p>
+              <p className="text-center">Create your account</p>
               <p className="small">
                 <span className="text-danger">*</span>
-                <strong>All fields are required</strong>
+                All fields are required
               </p>
               <form onSubmit={this.handleSubmit} noValidate>
                 <label htmlFor="firstname">First Name</label>
@@ -82,8 +82,6 @@ class Register extends Component {
                   value={this.state.email}
                   onChange={this.handleInputChange}
                   error={errors.email}
-                  info="This site uses Gravatar so if you want a profile image, use
-                  a Gravatar email"
                 />
                 <label htmlFor="password">Password</label>
                 <TextFieldGroup

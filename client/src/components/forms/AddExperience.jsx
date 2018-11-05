@@ -55,10 +55,10 @@ class AddExperience extends Component {
     const { errors } = this.state;
 
     return (
-      <div className="section add-experience">
+      <div className="section">
         <div className="container">
           <div className="row">
-            <div className="col-md-8 m-auto">
+            <div className="col-md-7 m-auto add-experience">
               <Link to="/dashboard" className="btn btn-light">
                 <span>
                   <i className="fas fa-long-arrow-alt-left" />
@@ -70,24 +70,32 @@ class AddExperience extends Component {
                 Add any developer/programming positions that you have had in the
                 past
               </p>
-              <small className="d-block pb-3">* = required field</small>
+              <small className="d-block pb-3">
+                <span className="text-danger">*</span> required field
+              </small>
               <form onSubmit={this.handleSubmit} noValidate>
+                <label htmlFor="jobTitle">
+                  <span className="text-danger">*</span>
+                  Job Title
+                </label>
                 <TextFieldGroup
-                  placeholder="Job Title"
                   name="title"
                   value={this.state.title}
                   onChange={this.handleInputChange}
                   error={errors.title}
                 />
+                <label htmlFor="company">
+                  <span className="text-danger">*</span>
+                  Company
+                </label>
                 <TextFieldGroup
-                  placeholder="Company"
                   name="company"
                   value={this.state.company}
                   onChange={this.handleInputChange}
                   error={errors.company}
                 />
+                <label htmlFor="jobTitle">Location</label>
                 <TextFieldGroup
-                  placeholder="Location"
                   name="location"
                   value={this.state.location}
                   onChange={this.handleInputChange}
@@ -124,8 +132,8 @@ class AddExperience extends Component {
                     Current Job
                   </label>
                 </div>
+                <label htmlFor="jobDescription">Job Description</label>
                 <TextAreaFieldGroup
-                  placeholder="Job Description"
                   name="description"
                   value={this.state.description}
                   onChange={this.handleInputChange}

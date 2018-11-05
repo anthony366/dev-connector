@@ -33,7 +33,7 @@ class EducationDetails extends Component {
       </tr>
     ));
     return (
-      <div>
+      <div className="edu-details">
         <h4 className="mb-4">Education Credentials</h4>
         <table className="table">
           <thead>

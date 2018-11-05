@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import TextFieldGroup from "../common/TextFieldGroup";
 import TextAreaFieldGroup from "../common/TextAreaFieldGroup";
+import SelectListGroup from "../common/SelectListGroup";
 import { addEducation } from "../../actions/profileActions";
 
 class AddEducation extends Component {
@@ -54,39 +55,62 @@ class AddEducation extends Component {
   render() {
     const { errors } = this.state;
 
+    // Select options for degree or certs
+    const options = [
+      { label: "Select Degree or Certification", value: 0 },
+      { label: "Associate Degree", value: "Associate Degree" },
+      { label: "Bachelor's Degree", value: "Bachelor's Degree" },
+      { label: "Master's Degree", value: "Master's Degree" },
+      { label: "Certificate", value: "Certificate" },
+      { label: "Other", value: "Other" }
+    ];
+
     return (
-      <div className="add-education">
+      <div>
         <div className="container">
           <div className="row">
-            <div className="col-md-8 m-auto">
+            <div className="col-md-7 ml-auto mr-auto mb-3">
               <Link to="/dashboard" className="btn btn-light">
                 <span>
                   <i className="fas fa-long-arrow-alt-left" />
                 </span>{" "}
                 Back to Dashboard
               </Link>
-              <h1 className="display-4 text-center">Add Education</h1>
-              <p className="lead text-center">
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-7 m-auto add-education">
+              <h1 className="text-center">Add Education</h1>
+              <p className="text-center">
                 Add any school, bootcamp, etc that you have attended
               </p>
-              <small className="d-block pb-3">* = required fields</small>
+              <small className="d-block pb-3">
+                <span className="text-danger">*</span> required fields
+              </small>
               <form onSubmit={this.handleSubmit} noValidate>
+                <label htmlFor="school">
+                  <span className="text-danger">*</span> School
+                </label>
                 <TextFieldGroup
-                  placeholder="* School"
                   name="school"
                   value={this.state.school}
                   onChange={this.handleInputChange}
                   error={errors.school}
                 />
-                <TextFieldGroup
-                  placeholder="* Degree or Certification"
+                <label htmlFor="degree">
+                  <span className="text-danger">*</span> Degree/Certificate
+                </label>
+                <SelectListGroup
                   name="degree"
                   value={this.state.degree}
                   onChange={this.handleInputChange}
+                  options={options}
                   error={errors.degree}
                 />
+                <label htmlFor="fieldofstudy">
+                  <span className="text-danger">*</span> Field of Study
+                </label>
                 <TextFieldGroup
-                  placeholder="* Field of Study"
                   name="fieldofstudy"
                   value={this.state.fieldofstudy}
                   onChange={this.handleInputChange}

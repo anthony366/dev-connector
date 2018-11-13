@@ -33,11 +33,11 @@ class Post extends Component {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <Link to="/feed" className="btn btn-light mb-3">
+              <Link to="/posts" className="btn btn-light mb-3">
                 <span>
                   <i className="fas fa-long-arrow-alt-left" />
                 </span>{" "}
-                Back To Feed
+                Back To Posts
               </Link>
               {postContent}
             </div>

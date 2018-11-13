@@ -63,7 +63,7 @@ class App extends Component {
             <PrivateRoute path="/edit-profile" component={EditProfile} />
             <PrivateRoute path="/add-experience" component={AddExperience} />
             <PrivateRoute path="/add-education" component={AddEducation} />
-            <PrivateRoute path="/feed" component={Posts} />
+            <PrivateRoute path="/posts" component={Posts} />
             <PrivateRoute exact path="/post/:id" component={Post} />
           </Switch>
           <Route exact path="/not-found" component={PageNotFound} />

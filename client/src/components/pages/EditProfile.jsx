@@ -170,13 +170,18 @@ class CreateProfile extends Component {
     ];
 
     return (
-      <div className="create-profile">
+      <div>
         <div className="container">
           <div className="row">
-            <div className="col-md-8 m-auto">
+            <div className="col-md-8 m-auto create-profile">
               <h1 className="display-4 text-center">Edit Profile</h1>
-              <small className="d-block pb-3">* = required fields</small>
+              <small className="d-block pb-3">
+                <span className="text-danger">*</span> required field
+              </small>
               <form onSubmit={this.handleSubmit}>
+                <label htmlFor="handle">
+                  <span className="text-danger">*</span> Profile handle
+                </label>
                 <TextFieldGroup
                   placeholder="* Profile Handle"
                   name="handle"
@@ -185,6 +190,9 @@ class CreateProfile extends Component {
                   error={errors.handle}
                   info="A unique handle for your profile URL. Your full name, company name, nickname"
                 />
+                <label htmlFor="status">
+                  <span className="text-danger">*</span> Status
+                </label>
                 <SelectListGroup
                   placeholder="Status"
                   name="status"
@@ -194,6 +202,7 @@ class CreateProfile extends Component {
                   error={errors.status}
                   info="Give us an idea of where you are at in your career"
                 />
+                <label htmlFor="company">Company</label>
                 <TextFieldGroup
                   placeholder="Company"
                   name="company"
@@ -202,6 +211,7 @@ class CreateProfile extends Component {
                   error={errors.company}
                   info="Could be your own company or one you work for"
                 />
+                <label htmlFor="website">Website</label>
                 <TextFieldGroup
                   placeholder="Website"
                   name="website"
@@ -210,6 +220,7 @@ class CreateProfile extends Component {
                   error={errors.website}
                   info="Could be your own website or a company one"
                 />
+                <label htmlFor="location">Location</label>
                 <TextFieldGroup
                   placeholder="Location"
                   name="location"
@@ -218,6 +229,9 @@ class CreateProfile extends Component {
                   error={errors.location}
                   info="City or city & state suggested (eg. Boston, MA)"
                 />
+                <label htmlFor="skills">
+                  <span className="text-danger">*</span> Skills
+                </label>
                 <TextFieldGroup
                   placeholder="* Skills"
                   name="skills"
@@ -227,6 +241,7 @@ class CreateProfile extends Component {
                   info="Please use comma separated values (eg.
                     HTML,CSS,JavaScript,PHP"
                 />
+                <label htmlFor="githubusername">Github Username</label>
                 <TextFieldGroup
                   placeholder="Github Username"
                   name="githubusername"
@@ -235,6 +250,7 @@ class CreateProfile extends Component {
                   error={errors.githubusername}
                   info="If you want your latest repos and a Github link, include your username"
                 />
+                <label htmlFor="bio">Bio</label>
                 <TextAreaFieldGroup
                   placeholder="Short Bio"
                   name="bio"

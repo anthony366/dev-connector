@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 import { deleteComment } from "../../actions/postActions";
 
 class CommentItem extends Component {
-  onDeleteClick(postId, commentId) {
-    this.props.deleteComment(postId, commentId);
+  onDeleteClick(postId, id) {
+    this.props.deleteComment(postId, id);
   }
 
   render() {
@@ -17,13 +17,13 @@ class CommentItem extends Component {
           <div className="col-md-2">
             <a href="profile.html">
               <img
-                className="rounded-circle d-none d-md-block"
+                className="rounded-circle d-md-block"
                 src={comment.avatar}
                 alt=""
               />
             </a>
             <br />
-            <p className="text-center">{comment.name}</p>
+            <p className="text-center">{comment.firstname}</p>
           </div>
           <div className="col-md-10">
             <p className="lead">{comment.text}</p>

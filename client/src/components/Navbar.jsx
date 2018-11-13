@@ -18,10 +18,10 @@ class Navbar extends Component {
 
     //displayed navbar items when authenticated
     const authLinks = (
-      <ul className="navbar-nav ml-auto auth-menu">
+      <ul className="navbar-nav auth-menu">
         <li className="nav-item">
-          <Link to="/feed" className="nav-link">
-            Post Feed
+          <Link to="/posts" className="nav-link">
+            Posts
           </Link>
         </li>
         <li className="nav-item">
@@ -61,15 +61,15 @@ class Navbar extends Component {
 
     //displayed navbar items when not authenticated
     const guestLinks = (
-      <ul className="navbar-nav ml-auto">
-        <li className="nav-item">
-          <Link to="/register" className="nav-link">
-            Sign Up
-          </Link>
-        </li>
+      <ul className="navbar-nav">
         <li className="nav-item">
           <Link to="/login" className="nav-link">
             Login
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/register" className="nav-link signup">
+            Sign Up
           </Link>
         </li>
       </ul>
@@ -91,11 +91,11 @@ class Navbar extends Component {
           </button>
 
           <div className="collapse navbar-collapse" id="mobile-nav">
-            <ul className="navbar-nav mr-auto">
+            <ul className="navbar-nav ml-auto">
               <li className="nav-item">
                 <Link className="nav-link" to="/profiles">
                   {" "}
-                  Developers
+                  Profiles
                 </Link>
               </li>
             </ul>

@@ -18,12 +18,12 @@ class ProfileAbout extends Component {
         <div className="col-md-12">
           <div className="card card-body bg-light mb-3">
             <h3 className="text-center text-info">
-              {profile.user.firstName}
+              {profile.user.firstname}
               's Bio
             </h3>
             <p className="lead">
               {isEmpty(profile.bio) ? (
-                <span>{profile.user.firstName} does not have a bio</span>
+                <span>{profile.user.firstname} does not have a bio</span>
               ) : (
                 <span>{profile.bio}</span>
               )}

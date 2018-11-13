@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-//create Schema for user posts
-const postSchema = new Schema({
+// Create Schema
+const PostSchema = new Schema({
   user: {
     type: Schema.Types.ObjectId,
     ref: "users"
@@ -11,7 +11,7 @@ const postSchema = new Schema({
     type: String,
     required: true
   },
-  name: {
+  firstname: {
     type: String
   },
   avatar: {
@@ -35,7 +35,7 @@ const postSchema = new Schema({
         type: String,
         required: true
       },
-      name: {
+      firstname: {
         type: String
       },
       avatar: {
@@ -53,4 +53,4 @@ const postSchema = new Schema({
   }
 });
 
-module.exports = Post = mongoose.model("post", postSchema);
+module.exports = Post = mongoose.model("post", PostSchema);

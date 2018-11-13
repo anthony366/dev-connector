@@ -58,13 +58,17 @@ class AddExperience extends Component {
       <div className="section">
         <div className="container">
           <div className="row">
-            <div className="col-md-7 m-auto add-experience">
+            <div className="col-md-7 ml-auto mr-auto mb-3 p-0">
               <Link to="/dashboard" className="btn btn-light">
                 <span>
                   <i className="fas fa-long-arrow-alt-left" />
                 </span>{" "}
                 Back to Dashboard
               </Link>
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-md-7 m-auto add-experience">
               <h1 className="display-4 text-center">Add Your Experience</h1>
               <p className="lead text-center">
                 Add any developer/programming positions that you have had in the

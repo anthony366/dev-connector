@@ -22,7 +22,7 @@ class AddPost extends Component {
 
     const newPost = {
       text: this.state.text,
-      name: user.name,
+      firstname: user.firstname,
       avatar: user.avatar
     };
 

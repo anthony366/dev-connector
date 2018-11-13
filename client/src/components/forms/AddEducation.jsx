@@ -69,7 +69,7 @@ class AddEducation extends Component {
       <div>
         <div className="container">
           <div className="row">
-            <div className="col-md-7 ml-auto mr-auto mb-3">
+            <div className="col-md-7 ml-auto mr-auto mb-3 p-0">
               <Link to="/dashboard" className="btn btn-light">
                 <span>
                   <i className="fas fa-long-arrow-alt-left" />

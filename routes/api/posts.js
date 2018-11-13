@@ -37,7 +37,7 @@ router.post(
 
     const newPost = new Post({
       text: req.body.text,
-      name: req.body.name,
+      firstname: req.body.firstname,
       avatar: req.body.avatar,
       user: req.user.id
     });
@@ -138,20 +138,21 @@ router.post(
       //return errors
       return res.status(400).json(errors);
     }
-
-    Post.findById(req.params.id)
-      .then(post => {
-        const newComment = {
-          text: req.body.text,
-          name: req.body.name,
-          avatar: req.body.avatar,
-          user: req.body.id
-        };
-        //add new comment to comments array
-        post.comments.unshift(newComment);
-        post.save().then(post => res.json(post));
-      })
-      .catch(() => res.json({ error: "Post not found" }));
+    Profile.findOne({ user: req.user.id }).then(profile => {
+      Post.findById(req.params.id)
+        .then(post => {
+          const newComment = {
+            text: req.body.text,
+            firstname: req.body.firstname,
+            avatar: req.body.avatar,
+            user: req.body.id
+          };
+          //add new comment to comments array
+          post.comments.unshift(newComment);
+          post.save().then(post => res.json(post));
+        })
+        .catch(() => res.json({ error: "Post not found" }));
+    });
   }
 );
 

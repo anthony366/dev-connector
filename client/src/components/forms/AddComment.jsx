@@ -23,7 +23,7 @@ class AddComment extends Component {
 
     const newComment = {
       text: this.state.text,
-      name: user.name,
+      firstname: user.firstname,
       avatar: user.avatar
     };
 

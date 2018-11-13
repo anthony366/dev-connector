@@ -1,18 +1,20 @@
 <h3>HeyDev!</h3>
-Small social app built with Mongo, ExpressJS, ReactJS, and NodeJS
+A social app to browse and connect with developers. Built with Mongo, ExpressJS, ReactJS, and NodeJS
 
-Quick Start
+<hr />
 
-<h4>Install dependencies for server</h4>
+<h3>Quick Start</h3>
 
-npm install
+<h4><strong>Install dependencies for server</strong></h4>
 
-<h4> Install dependencies for client</h4>
+<i>npm install</i>
 
-npm run client-install
+<h4><strong>Install dependencies for client</strong></h4>
 
-<h4>Run the client & server together</h4>
+<i>npm run client-install</i>
 
-npm run dev
+<h4><strong>Run the client & server together</strong></h4>
+
+<i>npm run dev<i>
 
 Server runs on http://localhost:5000 and client on http://localhost:3000

@@ -13,7 +13,7 @@ A social app to browse and connect with developers. Built with Mongo, ExpressJS,
 
 <i>npm run client-install</i>
 
-<h4><strong>Run the client & server together</strong></h4>
+<h4><strong>Run the client & server together when working in development environment</strong></h4>
 
 <i>npm run dev<i>
 

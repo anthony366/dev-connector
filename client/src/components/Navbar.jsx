@@ -51,11 +51,6 @@ class Navbar extends Component {
             </li>
           </ul>
         </li>
-        {/* <li className="nav-item">
-          <a href="true" onClick={this.handleLogout} className="nav-link">
-            Logout
-          </a>
-        </li> */}
       </ul>
     );
 
@@ -85,13 +80,15 @@ class Navbar extends Component {
             className="navbar-toggler"
             type="button"
             data-toggle="collapse"
-            data-target="#mobile-nav"
+            data-target="#mobileNav"
+            aria-controls="mobileNav"
+            aria-expanded="false"
           >
             <span className="navbar-toggler-icon" />
           </button>
 
-          <div className="collapse navbar-collapse" id="mobile-nav">
-            <ul className="navbar-nav ml-auto">
+          <div className="collapse navbar-collapse" id="mobileNav">
+            <ul className="nav navbar-nav ml-auto">
               <li className="nav-item">
                 <Link className="nav-link" to="/profiles">
                   {" "}

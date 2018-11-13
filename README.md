@@ -1,18 +1,18 @@
-<h1>HeyDev!</h1>
+<h3>HeyDev!</h3>
 Small social app built with Mongo, ExpressJS, ReactJS, and NodeJS
 
 Quick Start
 
-# Install dependencies for server
+<h4>Install dependencies for server</h4>
 
 npm install
 
-# Install dependencies for client
+<h4> Install dependencies for client</h4>
 
 npm run client-install
 
-# Run the client & server together
+<h4>Run the client & server together</h4>
 
 npm run dev
 
-# Server runs on http://localhost:5000 and client on http://localhost:3000
+Server runs on http://localhost:5000 and client on http://localhost:3000

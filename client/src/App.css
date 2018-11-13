@@ -51,8 +51,14 @@ img {
 
 .navbar-nav {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+@media screen and (min-width: 576px) {
+  .navbar-nav {
+    align-items: center;
+  }
 }
 
 .nav-item {

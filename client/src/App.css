@@ -45,6 +45,35 @@ img {
   height: 100%;
 }
 
+.avatar-pic {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar-pic a {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.avatar-pic a img {
+  width: 20%;
+}
+.card .lead {
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .avatar-pic a img {
+    width: 50%;
+  }
+  .card .lead {
+    text-align: left;
+  }
+}
+
 .card-form {
   opacity: 0.9;
 }

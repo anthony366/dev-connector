@@ -13,15 +13,13 @@ module.exports = function validateRegisterInput(data) {
   if (!Validator.isLength(data.firstname, { min: 2, max: 30 })) {
     errors.firstname = "First name must be between 2 and 30 charcters";
   }
-
-  if (!Validator.isLength(data.lastname, { min: 2, max: 30 })) {
-    errors.lastname = "Last name must be between 2 and 30 charcters";
-  }
-
   if (Validator.isEmpty(data.firstname)) {
     errors.firstname = "First name is required";
   }
 
+  if (!Validator.isLength(data.lastname, { min: 2, max: 30 })) {
+    errors.lastname = "Last name must be between 2 and 30 charcters";
+  }
   if (Validator.isEmpty(data.lastname)) {
     errors.lastname = "Last name is required";
   }
